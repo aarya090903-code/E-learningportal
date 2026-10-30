@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Course</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f2f2f2;
+        }
+
+        .box{
+            width:450px;
+            margin:50px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            text-align:center;
+            color:#0d6efd;
+        }
+
+        input, textarea{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#0d6efd;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Add New Course</h2>
+
+<form method="POST">
+
+<input type="text" name="course_name" placeholder="Course Name" required>
+
+<textarea name="description" placeholder="Course Description" required></textarea>
+
+<input type="text" name="image" placeholder="Image Name (Example: python.jpg)" required>
+
+<button type="submit">Add Course</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

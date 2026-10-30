@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Manage Courses</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f2f2f2;
+}
+
+table{
+    width:90%;
+    margin:auto;
+    margin-top:40px;
+    border-collapse:collapse;
+    background:white;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background:#0d6efd;
+    color:white;
+}
+
+.delete{
+    background:red;
+    color:white;
+    padding:8px 15px;
+    text-decoration:none;
+    border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 align="center">Manage Courses</h1>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Course</th>
+<th>Description</th>
+<th>Delete</th>
+
+</tr>
+
+{% for course in courses %}
+
+<tr>
+
+<td>{{ course.id }}</td>
+<td>{{ course.course_name }}</td>
+<td>{{ course.description }}</td>
+
+<td>
+
+<a
+class="delete"
+href="/delete_course/{{ course.id }}">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

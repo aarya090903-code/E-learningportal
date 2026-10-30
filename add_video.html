@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Video</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f2f2f2;
+        }
+
+        .box{
+            width:450px;
+            margin:50px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h2{
+            text-align:center;
+            color:#0d6efd;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#0d6efd;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Add Video</h2>
+
+<form method="POST">
+
+<input type="text" name="title" placeholder="Video Title" required>
+
+<input type="text" name="video_url" placeholder="YouTube Embed Link" required>
+
+<button type="submit">
+Add Video
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

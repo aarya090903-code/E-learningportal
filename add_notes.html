@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Add Notes</title>
+
+<style>
+
+body{
+    background:#f2f2f2;
+    font-family:Arial;
+}
+
+.box{
+    width:450px;
+    background:white;
+    margin:50px auto;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+h2{
+    text-align:center;
+    color:#0d6efd;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:17px;
+}
+
+button:hover{
+    background:#084298;
+}
+
+.back{
+    text-align:center;
+    margin-top:20px;
+}
+
+.back a{
+    text-decoration:none;
+    color:#0d6efd;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Add Study Notes</h2>
+
+<form method="POST">
+
+<input
+type="text"
+name="title"
+placeholder="Enter Note Title"
+required>
+
+<input
+type="text"
+name="filename"
+placeholder="Example: python_notes.pdf"
+required>
+
+<button type="submit">
+
+Add Notes
+
+</button>
+
+</form>
+
+<div class="back">
+
+<a href="/admin_dashboard">
+
+⬅ Back to Admin Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Admin Login - Government School E-Learning Portal</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            min-height:100vh;
+
+            background-image:
+                linear-gradient(
+                    rgba(0,45,90,0.65),
+                    rgba(0,35,75,0.75)
+                ),
+                url("{{ url_for('static', filename='admin_background.png') }}");
+
+            background-size:cover;
+            background-position:center;
+            background-attachment:fixed;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            color:#fff;
+        }
+
+        .page{
+            width:90%;
+            max-width:1100px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            gap:50px;
+        }
+
+        /* LEFT SIDE */
+
+        .info{
+            flex:1;
+            padding:30px;
+        }
+
+        .icon{
+            font-size:65px;
+            margin-bottom:15px;
+        }
+
+        .info h1{
+            font-size:50px;
+            margin-bottom:10px;
+            text-shadow:2px 2px 5px #000;
+        }
+
+        .info h2{
+            color:#42a5ff;
+            font-size:25px;
+            margin-bottom:35px;
+        }
+
+        .info-box{
+            margin-bottom:22px;
+        }
+
+        .info-box h3{
+            font-size:20px;
+            margin-bottom:6px;
+        }
+
+        .info-box p{
+            font-size:15px;
+            line-height:1.5;
+            color:#e8f3ff;
+        }
+
+        /* LOGIN CARD */
+
+        .login-card{
+            width:420px;
+            background:white;
+            color:#222;
+
+            padding:40px;
+
+            border-radius:15px;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .login-icon{
+            text-align:center;
+            font-size:55px;
+            margin-bottom:10px;
+        }
+
+        .login-card h2{
+            text-align:center;
+            color:#123d6b;
+            font-size:30px;
+            margin-bottom:10px;
+        }
+
+        .line{
+            width:60px;
+            height:4px;
+            background:#1677ff;
+            margin:0 auto 30px;
+            border-radius:5px;
+        }
+
+        .input-group{
+            margin-bottom:20px;
+        }
+
+        .input-group label{
+            display:block;
+            margin-bottom:7px;
+            font-weight:bold;
+            color:#123d6b;
+        }
+
+        .input-group input{
+            width:100%;
+            padding:14px;
+
+            border:1px solid #ccd6e0;
+            border-radius:7px;
+
+            font-size:16px;
+
+            outline:none;
+        }
+
+        .input-group input:focus{
+            border-color:#1677ff;
+
+            box-shadow:
+                0 0 5px rgba(22,119,255,0.3);
+        }
+
+        .login-btn{
+            width:100%;
+
+            padding:14px;
+
+            background:#1677ff;
+            color:white;
+
+            border:none;
+            border-radius:7px;
+
+            font-size:18px;
+            font-weight:bold;
+
+            cursor:pointer;
+
+            transition:0.3s;
+        }
+
+        .login-btn:hover{
+            background:#0d63d8;
+            transform:translateY(-2px);
+
+            box-shadow:
+                0 6px 15px rgba(22,119,255,0.4);
+        }
+
+        .secure{
+            text-align:center;
+            margin-top:22px;
+
+            color:#607080;
+            font-size:14px;
+        }
+
+        .back{
+            display:block;
+
+            text-align:center;
+
+            margin-top:20px;
+
+            color:#1677ff;
+
+            text-decoration:none;
+
+            font-weight:bold;
+        }
+
+        .back:hover{
+            text-decoration:underline;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width:800px){
+
+            body{
+                padding:30px 15px;
+            }
+
+            .page{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            .info{
+                text-align:center;
+                padding:10px;
+            }
+
+            .info h1{
+                font-size:38px;
+            }
+
+            .info h2{
+                font-size:20px;
+                margin-bottom:20px;
+            }
+
+            .info-box{
+                display:none;
+            }
+
+            .login-card{
+                width:100%;
+                max-width:420px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- LEFT INFORMATION -->
+
+    <div class="info">
+
+        <div class="icon">
+            🔐
+        </div>
+
+        <h1>
+            Admin Login
+        </h1>
+
+        <h2>
+            Government School E-Learning Portal
+        </h2>
+
+
+        <div class="info-box">
+
+            <h3>
+                🛡️ Secure Access
+            </h3>
+
+            <p>
+                Only authorized administrators can
+                access the management system.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>
+                👥 Manage & Control
+            </h3>
+
+            <p>
+                Manage students, courses, notes,
+                videos and quizzes.
+            </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <h3>
+                📊 Track & Monitor
+            </h3>
+
+            <p>
+                Monitor learning resources and
+                student activities.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOGIN CARD -->
+
+    <div class="login-card">
+
+        <div class="login-icon">
+            👤
+        </div>
+
+        <h2>
+            Admin Login
+        </h2>
+
+        <div class="line"></div>
+
+
+        <form method="POST" action="/admin">
+
+
+            <div class="input-group">
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter admin username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter admin password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-btn"
+            >
+                🔐 Login
+            </button>
+
+
+        </form>
+
+
+        <div class="secure">
+            🛡️ Secure Admin Access
+        </div>
+
+
+        <a href="/" class="back">
+            ← Back to Home
+        </a>
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

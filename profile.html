@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Profile</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:#f2f2f2;
+}
+
+.box{
+    width:450px;
+    margin:80px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+h1{
+    text-align:center;
+    color:#0d6efd;
+}
+
+p{
+    font-size:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Student Profile</h1>
+
+<p><b>Name:</b> {{ student.name }}</p>
+
+<p><b>Email:</b> {{ student.email }}</p>
+
+<br>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

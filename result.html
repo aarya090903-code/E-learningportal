@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz Result</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f2f2f2;
+            text-align:center;
+            padding:60px;
+        }
+
+        .box{
+            background:white;
+            width:500px;
+            margin:auto;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        h1{
+            color:#0d6efd;
+        }
+
+        h2{
+            color:green;
+        }
+
+        a{
+            display:inline-block;
+            margin-top:20px;
+            text-decoration:none;
+            background:#0d6efd;
+            color:white;
+            padding:10px 20px;
+            border-radius:5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Quiz Completed 🎉</h1>
+
+<h2>Your Score</h2>
+
+<h1>{{ score }} / {{ total }}</h1>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

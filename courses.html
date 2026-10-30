@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f2f2f2;
+            padding:30px;
+        }
+
+        h1{
+            text-align:center;
+        }
+
+        .container{
+            display:flex;
+            flex-wrap:wrap;
+            gap:20px;
+            justify-content:center;
+        }
+
+        .course{
+            width:300px;
+            background:white;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+            overflow:hidden;
+        }
+
+        .course img{
+            width:100%;
+            height:180px;
+            object-fit:cover;
+        }
+
+        .course h2{
+            padding:10px;
+        }
+
+        .course p{
+            padding:0 10px 15px;
+        }
+
+        a{
+            text-decoration:none;
+            color:white;
+            background:#0d6efd;
+            padding:10px 20px;
+            border-radius:5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h1>Available Courses</h1>
+
+<div class="container">
+
+{% for course in courses %}
+
+<div class="course">
+
+<img src="{{ url_for('static', filename='images/' + course.image) }}">
+
+<h2>{{ course.course_name }}</h2>
+
+<p>{{ course.description }}</p>
+
+<br>
+
+<a href="/edit_course/{{ course.id }}"
+style="background:#ffc107;color:black;padding:8px 15px;border-radius:5px;">
+Edit
+</a>
+
+<a href="/delete_course/{{ course.id }}"
+onclick="return confirm('Are you sure you want to delete this course?')"
+style="background:red;color:white;padding:8px 15px;border-radius:5px;margin-left:10px;">
+Delete
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<br><br>
+
+<a href="/dashboard">⬅ Back to Dashboard</a>
+
+</body>
+</html>

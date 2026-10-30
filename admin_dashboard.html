@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#f2f2f2;
+        }
+
+        header{
+            background:#0d6efd;
+            color:white;
+            padding:20px;
+            text-align:center;
+        }
+
+        .container{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            margin-top:40px;
+        }
+
+        .card{
+            width:250px;
+            background:white;
+            margin:20px;
+            padding:25px;
+            text-align:center;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        .card h2{
+            color:#0d6efd;
+        }
+
+        .card a{
+            display:inline-block;
+            margin-top:15px;
+            padding:10px 20px;
+            background:#0d6efd;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+
+
+
+<div class="container">
+
+<div class="card">
+<h2>👨‍🎓 Students</h2>
+<h1>{{ total_students }}</h1>
+</div>
+
+<div class="card">
+<h2>📚 Courses</h2>
+<h1>{{ total_courses }}</h1>
+</div>
+
+<div class="card">
+<h2>📄 Notes</h2>
+<h1>{{ total_notes }}</h1>
+</div>
+
+<div class="card">
+<h2>🎥 Videos</h2>
+<h1>{{ total_videos }}</h1>
+</div>
+
+<div class="card">
+<h2>📝 Quiz Questions</h2>
+<h1>{{ total_quiz }}</h1>
+</div>
+
+<div class="card">
+<h2>➕ Add Course</h2>
+<a href="/add_course">Open</a>
+</div>
+
+<div class="card">
+<h2>➕ Add Notes</h2>
+<a href="/admin/add_note">Open</a>
+</div>
+
+<div class="card">
+<h2>➕ Add Videos</h2>
+<a href="/admin/add_video">Open</a>
+</div>
+
+<div class="card">
+<h2>➕ Add Quiz</h2>
+<a href="/admin/add_quiz">Open</a>
+</div>
+
+<div class="card">
+<h2>📚 Manage Courses</h2>
+<a href="/manage_courses">Open</a>
+</div>
+
+<div class="card">
+<h2>👨‍🎓 Students</h2>
+<a href="/students">Open</a>
+</div>
+
+<div class="card">
+<h2>🚪 Logout</h2>
+<a href="/logout">Logout</a>
+</div>
+
+<div class="card">
+    <h2>👨‍🎓 Student Portal</h2>
+    <p>Go to Student Login</p>
+    <a href="/login">Open</a>
+</div>
+
+
+</div>
+
+</body>
+</html>

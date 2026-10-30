@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registered Students</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f2f2f2;
+            padding:30px;
+        }
+
+        h1{
+            text-align:center;
+            color:#0d6efd;
+        }
+
+        table{
+            width:90%;
+            margin:auto;
+            border-collapse:collapse;
+            background:white;
+            box-shadow:0 0 10px gray;
+        }
+
+        th,td{
+            border:1px solid #ddd;
+            padding:12px;
+            text-align:center;
+        }
+
+        th{
+            background:#0d6efd;
+            color:white;
+        }
+
+        a{
+            text-decoration:none;
+            background:#0d6efd;
+            color:white;
+            padding:10px 20px;
+            border-radius:5px;
+        }
+
+        .back{
+            text-align:center;
+            margin-top:30px;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Registered Students</h1>
+
+<table>
+
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+</tr>
+
+{% for student in students %}
+
+<tr>
+    <td>{{ student.id }}</td>
+    <td>{{ student.name }}</td>
+    <td>{{ student.email }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<div class="back">
+    <a href="/admin_dashboard">⬅ Back to Admin Dashboard</a>
+</div>
+
+</body>
+</html>

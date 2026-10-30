@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Government School E-Learning Portal</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            min-height:100vh;
+
+            background-image:
+                linear-gradient(rgba(0,50,100,0.55), rgba(0,30,70,0.65)),
+                url("{{ url_for('static', filename='school_background.png') }}");
+
+            background-size:cover;
+            background-position:center;
+            background-attachment:fixed;
+
+            color:white;
+        }
+
+        .navbar{
+            height:75px;
+            background:rgba(0,45,90,0.95);
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            padding:0 6%;
+        }
+
+        .logo{
+            font-size:25px;
+            font-weight:bold;
+            line-height:1.1;
+        }
+
+        .logo span{
+            color:#42a5ff;
+        }
+
+        .nav-links{
+            display:flex;
+            gap:30px;
+        }
+
+        .nav-links a{
+            color:white;
+            text-decoration:none;
+            font-size:17px;
+            font-weight:bold;
+        }
+
+        .nav-links a:hover{
+            color:#42a5ff;
+        }
+
+        .hero{
+            min-height:calc(100vh - 75px);
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            text-align:center;
+
+            padding:50px 20px;
+        }
+
+        .content{
+            max-width:1000px;
+        }
+
+        .cap{
+            font-size:55px;
+            margin-bottom:10px;
+        }
+
+        h1{
+            font-size:52px;
+            margin-bottom:5px;
+            text-shadow:2px 2px 5px black;
+        }
+
+        h2{
+            font-size:42px;
+            color:#42a5ff;
+            margin-bottom:20px;
+            text-shadow:2px 2px 5px black;
+        }
+
+        .tagline{
+            font-size:22px;
+            font-weight:bold;
+            margin-bottom:20px;
+        }
+
+        .welcome{
+            font-size:18px;
+            line-height:1.6;
+            margin-bottom:30px;
+        }
+
+        .buttons{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            display:inline-block;
+
+            padding:16px 35px;
+
+            border-radius:8px;
+
+            color:white;
+            text-decoration:none;
+
+            font-size:18px;
+            font-weight:bold;
+
+            min-width:200px;
+
+            transition:0.3s;
+        }
+
+        .login{
+            background:#1677ff;
+        }
+
+        .register{
+            background:#16a05d;
+        }
+
+        .admin{
+            background:#e63946;
+        }
+
+        .btn:hover{
+            transform:translateY(-3px);
+            box-shadow:0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .features{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+
+            margin-top:50px;
+
+            flex-wrap:wrap;
+        }
+
+        .feature{
+            width:210px;
+
+            padding:22px;
+
+            background:rgba(0,35,70,0.75);
+
+            border:1px solid rgba(255,255,255,0.3);
+
+            border-radius:10px;
+        }
+
+        .feature-icon{
+            font-size:35px;
+            margin-bottom:10px;
+        }
+
+        .feature h3{
+            margin-bottom:8px;
+        }
+
+        .feature p{
+            font-size:14px;
+            line-height:1.5;
+        }
+
+        footer{
+            margin-top:40px;
+            padding:20px;
+
+            text-align:center;
+
+            background:rgba(0,20,45,0.8);
+
+            font-size:14px;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width:700px){
+
+            .navbar{
+                height:auto;
+                padding:20px;
+
+                flex-direction:column;
+                gap:15px;
+            }
+
+            .nav-links{
+                gap:15px;
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            h1{
+                font-size:35px;
+            }
+
+            h2{
+                font-size:30px;
+            }
+
+            .cap{
+                font-size:40px;
+            }
+
+            .tagline{
+                font-size:18px;
+            }
+
+            .welcome{
+                font-size:16px;
+            }
+
+            .btn{
+                width:90%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+    <div class="logo">
+        🎓 Government School<br>
+        <span>E-Learning Portal</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/login">Student Login</a>
+
+        <a href="/register">Register</a>
+
+        <a href="/admin">Admin</a>
+
+    </div>
+
+</div>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+    <div class="content">
+
+        <div class="cap">🎓</div>
+
+        <h1>Government School</h1>
+
+        <h2>E-Learning Portal</h2>
+
+        <div class="tagline">
+            Learn &nbsp; • &nbsp; Explore &nbsp; • &nbsp; Achieve
+        </div>
+
+        <div class="welcome">
+
+            Welcome to the Government School E-Learning Portal.<br>
+
+            Your gateway to smart learning, digital education
+            and a brighter future.
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <a href="/login" class="btn login">
+                👨‍🎓 Student Login
+            </a>
+
+            <a href="/register" class="btn register">
+                📝 Student Register
+            </a>
+
+            <a href="/admin" class="btn admin">
+                🔐 Admin Login
+            </a>
+
+        </div>
+
+
+        <!-- FEATURES -->
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">📚</div>
+
+                <h3>Quality Education</h3>
+
+                <p>
+                    Access quality study materials
+                    anytime and anywhere.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">🎥</div>
+
+                <h3>Video Lectures</h3>
+
+                <p>
+                    Learn through educational
+                    video lectures.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">📄</div>
+
+                <h3>Study Notes</h3>
+
+                <p>
+                    Download notes and study
+                    whenever you need.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">📝</div>
+
+                <h3>Online Quiz</h3>
+
+                <p>
+                    Test your knowledge and
+                    check your score.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026 Government School E-Learning Portal.
+    All Rights Reserved.
+
+</footer>
+
+
+</body>
+
+</html>
